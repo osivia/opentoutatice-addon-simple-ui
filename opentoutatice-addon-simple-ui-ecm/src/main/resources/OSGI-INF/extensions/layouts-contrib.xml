@@ -1,0 +1,441 @@
+<?xml version="1.0"?>
+<component name="org.osivia.ui.layouts">
+
+	<require>fr.toutatice.ecm.platform.web.document.forms.layouts.webapp
+	</require>
+	<require>fr.toutatice.ecm.platform.web.document.forms.layouts.article.webapp
+	</require>
+	<require>org.nuxeo.ecm.webengine.sites.layouts</require>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgettypes">
+
+		<widgetType name="ttc_richtext_with_mimetype">
+			<aliases>
+				<alias>richtext_with_mimetype</alias>
+				<alias>htmltext</alias>
+			</aliases>
+			<configuration>
+				<title>TTCRichtext</title>
+				<categories>
+					<!-- do not export with documents -->
+					<category>configuration_not_ready</category>
+					<!-- <category>document</category> -->
+				</categories>
+				<supportedModes>
+					<mode>edit</mode>
+					<mode>view</mode>
+				</supportedModes>
+				<fields>
+					<list>false</list>
+					<complex>false</complex>
+					<supportedTypes>
+						<type>string</type>
+					</supportedTypes>
+				</fields>
+				<properties>
+					<defaultValues mode="any">
+						<property name="showFormat">false</property>
+						<property name="disableHTMLInit">true</property>
+					</defaultValues>
+					<layouts mode="view">
+						<layout name="richtext_widget_type_properties_view">
+							<rows>
+								<row>
+									<widget>cssClass</widget>
+								</row>
+							</rows>
+							<widget name="cssClass" type="text">
+								<labels>
+									<label mode="any">Style class</label>
+								</labels>
+								<fields>
+									<field>cssClass</field>
+								</fields>
+							</widget>
+						</layout>
+					</layouts>
+					<layouts mode="edit">
+						<layout name="richtext_widget_type_properties_edit">
+							<rows>
+								<row>
+									<widget>height</widget>
+								</row>
+								<row>
+									<widget>width</widget>
+								</row>
+								<row>
+									<widget>cols</widget>
+								</row>
+								<row>
+									<widget>rows</widget>
+								</row>
+								<row>
+									<widget>editorSelector</widget>
+								</row>
+							</rows>
+							<widget name="width" type="int">
+								<labels>
+									<label mode="any">Width</label>
+								</labels>
+								<helpLabels>
+									<label mode="any">
+										The textarea width. Defaults to "700".
+									</label>
+								</helpLabels>
+								<fields>
+									<field>width</field>
+								</fields>
+							</widget>
+							<widget name="height" type="int">
+								<labels>
+									<label mode="any">Height</label>
+								</labels>
+								<helpLabels>
+									<label mode="any">
+										The textarea height. Defaults to "400".
+									</label>
+								</helpLabels>
+								<fields>
+									<field>height</field>
+								</fields>
+							</widget>
+							<widget name="cols" type="int">
+								<labels>
+									<label mode="any">Number of columns</label>
+								</labels>
+								<helpLabels>
+									<label mode="any">
+										The cols attribute sets the number of
+										columns
+										to display.
+										Available since 5.3.1.
+									</label>
+								</helpLabels>
+								<fields>
+									<field>cols</field>
+								</fields>
+							</widget>
+							<widget name="rows" type="int">
+								<labels>
+									<label mode="any">Number of rows</label>
+								</labels>
+								<helpLabels>
+									<label mode="any">
+										The rows attribute sets the number of rows
+										to
+										display.
+										Available since 5.3.1.
+									</label>
+								</helpLabels>
+								<fields>
+									<field>rows</field>
+								</fields>
+							</widget>
+							<widget name="editorSelector" type="text">
+								<labels>
+									<label mode="any">Editor selector</label>
+								</labels>
+								<helpLabels>
+									<label mode="any">
+										The class to use to identify text areas to
+										turn into html
+										editors. Defaults to "mceEditor". See the
+										editor_selector
+										option in tiny_mce
+										(http://wiki.moxiecode.com/index.php/TinyMCE:Configuration/editor_selector).
+									</label>
+								</helpLabels>
+								<fields>
+									<field>editorSelector</field>
+								</fields>
+							</widget>
+							<widget name="disableHTMLInit" type="boolean">
+								<labels>
+									<label mode="any">Disable HTML init</label>
+								</labels>
+								<helpLabels>
+									<label mode="any">
+										Disable the tiny MCE init from
+										tiny_mce_init.js
+									</label>
+								</helpLabels>
+								<fields>
+									<field>disableHTMLInit</field>
+								</fields>
+							</widget>
+							<widget name="alternateTinyMCEjs" type="text">
+								<labels>
+									<label mode="any">Alternate Rich tiny MCE</label>
+								</labels>
+								<helpLabels>
+									<label mode="any">
+										Definition of new tiny MCE js
+									</label>
+								</helpLabels>
+								<fields>
+									<field>alternateTinyMCEjs</field>
+								</fields>
+							</widget>
+						</layout>
+					</layouts>
+				</properties>
+			</configuration>
+			<handler-class>
+				org.nuxeo.ecm.platform.forms.layout.facelets.plugins.TemplateWidgetTypeHandler
+			</handler-class>
+			<property name="template">
+				/widgets/ttc_richtext_with_mimetype_widget_template.xhtml
+			</property>
+		</widgetType>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+
+		<widget name="ottc_emty_widget" type="template">
+			<aliases>
+				<alias>description</alias>
+				<alias>baseline</alias>
+				<alias>toutatice_showInMenu_widget</alias>
+				<alias>add_thumbnail</alias>
+			</aliases>
+			<labels>
+				<label mode="any"></label>
+			</labels>
+			<translated>false</translated>
+			<properties mode="any">
+				<property name="template">/widgets/empty_widget_template.xhtml
+				</property>
+			</properties>
+		</widget>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+		<!-- mode "view_summary" is used by Nx metadata widget -->
+		<layout name="ottc_empty_edit_layout">
+			<aliases>
+				<alias>dublincore</alias>
+			</aliases>
+			<templates>
+				<template mode="view_summary">
+					/layouts/layout_default_template.xhtml
+				</template>
+				<template mode="edit">
+					/layouts/ottc_empty_layout.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>ottc_metadata</widget>
+				</row>
+			</rows>
+			<widget name="ottc_metadata" type="layout">
+				<labels>
+					<label mode="any"></label>
+				</labels>
+				<properties widgetMode="any">
+					<property name="name">ottc_metadata</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<layout name="ottc_heading">
+			<aliases>
+				<alias>heading</alias>
+			</aliases>
+			<templates>
+				<template mode="any">
+					/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<properties mode="any">
+				<property name="foo">bar</property>
+			</properties>
+			<rows>
+				<row>
+					<widget>title</widget>
+				</row>
+			</rows>
+			<widget name="title" type="text">
+				<labels>
+					<label mode="any">title</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>dc:title</field>
+				</fields>
+				<widgetModes>
+					<mode value="view_summary">#{empty layoutValue.dc.title?'hidden':'view'}
+					</mode>
+				</widgetModes>
+				<properties widgetMode="edit">
+					<property name="required">#{webActions.isTitleRequired()}</property>
+					<property name="styleClass">dataInputText</property>
+				</properties>
+			</widget>
+		</layout>
+
+		<!-- To override native WebSite layout (just for remove enclosed definition 
+			of baseline...) -->
+		<layout name="webcontainer">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>name</widget>
+				</row>
+				<row>
+					<widget>url</widget>
+				</row>
+				<row>
+					<widget>email</widget>
+				</row>
+				<row>
+					<widget>logo</widget>
+				</row>
+				<row>
+					<widget>welcomeText</widget>
+				</row>
+				<row>
+					<widget>welcomeMedia</widget>
+				</row>
+				<row>
+					<widget>useCaptcha</widget>
+				</row>
+				<row>
+					<widget>moderationType</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<!-- Override of enclosed definitions layouts -->
+		<layout name="layout@Annonce-create">
+			<templates>
+				<template mode="create">/layouts/ottc_editor_js_layout_default_template.xhtml
+				</template>
+			</templates>
+			<properties mode="create">
+				<property name="editorJs">tinymce/custom/tiny_mce_init_extrait.js
+				</property>
+			</properties>
+			<rows>
+				<row>
+					<widget>article_title</widget>
+				</row>
+				<row>
+					<widget>article_extrait</widget>
+				</row>
+				<row>
+					<widget>article_content</widget>
+				</row>
+				<row>
+					<widget>article_image</widget>
+				</row>
+				<row>
+					<widget>files</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="layout@Annonce-edit">
+			<templates>
+				<template mode="edit">/layouts/ottc_editor_js_layout_default_template.xhtml
+				</template>
+			</templates>
+			<properties mode="edit">
+				<property name="editorJs">tinymce/custom/tiny_mce_init_extrait.js
+				</property>
+			</properties>
+			<rows>
+				<row>
+					<widget>article_title</widget>
+				</row>
+				<row>
+					<widget>article_extrait</widget>
+				</row>
+				<row>
+					<widget>article_content</widget>
+				</row>
+				<row>
+					<widget>article_image</widget>
+				</row>
+				<row>
+					<widget>files</widget>
+				</row>
+			</rows>
+		</layout>
+
+		<layout name="layout@AnnonceFolder-create">
+			<templates>
+				<template mode="create">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>article_folder_title</widget>
+				</row>
+			</rows>
+
+
+		</layout>
+
+		<layout name="layout@AnnonceFolder-edit">
+			<templates>
+				<template mode="edit">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>article_folder_title</widget>
+				</row>
+			</rows>
+		</layout>
+		
+		<layout name="layout@PortalPage-create">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>ttc_title</widget>
+				</row>
+				<row>
+					<widget>picture</widget>
+				</row>
+				<row>
+					<widget>content</widget>
+				</row>
+			</rows>
+		</layout>
+		
+		<layout name="layout@PortalPage-edit">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>ttc_title</widget>
+				</row>
+				<row>
+					<widget>picture</widget>
+				</row>
+				<row>
+					<widget>content</widget>
+				</row>
+			</rows>
+		</layout>
+
+	</extension>
+
+</component>
+	
+	

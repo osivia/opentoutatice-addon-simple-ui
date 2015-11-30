@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<component name="org.osivia.ui.metadata.generic">
+
+	<require>fr.toutatice.ecm.platform.service.generic.ui</require>
+	<require>org.osivia.ui.metadata.layouts</require>
+
+	<extension target="fr.toutatice.ecm.platform.generic.ui.GenericUIService"
+		point="layouts">
+
+		<layouts mode="edit">
+			<!-- Override of default behaviour -->
+			<layout name="layout@add_thumbnail">
+				<excludedTypes>
+					<type>*</type>
+				</excludedTypes>
+			</layout>
+			<layout name="keywords">
+				<excludedTypes>
+					<type>*</type>
+				</excludedTypes>
+			</layout>
+			<layout name="toutatice_showInMenu">
+				<excludedTypes>
+					<type>*</type>
+				</excludedTypes>
+			</layout>
+			<layout name="toutatice_webId">
+				<excludedTypes>
+					<type>*</type>
+				</excludedTypes>
+			</layout>
+
+			<!-- New metadata layout -->
+			<layout name="ottc_metadata">
+				<position>
+					<at>end</at>
+				</position>
+			</layout>
+
+		</layouts>
+
+		<layouts mode="create">
+			<layout name="toutatice_showInMenu">
+				<excludedTypes>
+					<type>*</type>
+				</excludedTypes>
+			</layout>
+
+		</layouts>
+
+	</extension>
+
+</component>

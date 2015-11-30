@@ -1,0 +1,29 @@
+<f:subview xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jstl/core">
+
+    <c:choose>
+    <c:when test="#{widget.mode == 'edit'}">
+        <div class="checkbox">
+            <label><h:selectBooleanCheckbox value="#{field_0}"></h:selectBooleanCheckbox>
+                <h:outputText value="#{messages[widget.properties.title]}" /></label>
+        </div>
+    </c:when>
+
+    <c:when test="#{widget.mode == 'view'}">
+        <div class="checkbox">
+            <label>
+                <c:choose>
+                <c:when test="#{field_0 == 'true'}">
+                    <h:outputText value="#{messages['yes']}" />
+                </c:when>
+                <c:otherwise>
+                    <h:outputText value="#{messages['no']}" />
+                </c:otherwise>
+                </c:choose>
+            </label>
+        </div>
+    </c:when>
+
+    </c:choose>
+</f:subview>
