@@ -23,6 +23,7 @@ function createTinyMceExtract() {
 				// Theme options
 				toolbar1 : "bold italic underline | strikethrough subscript | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent blockquote | forecolor backcolor | nuxeolink link unlink",
 				menubar: false,
+				statusbar: false,
 
 				gecko_spellcheck : true,
 

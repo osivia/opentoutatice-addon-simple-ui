@@ -4,11 +4,10 @@ Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Bundle-Version: 1.0
 Bundle-Name: org.osivia.ui.metadata
-Bundle-ManifestVersion: 2
 Nuxeo-Component: OSGI-INF/extensions/layouts-contrib.xml,OSGI-INF/exte
  nsions/layouts-metadata-contrib.xml,OSGI-INF/extensions/generic-ui-co
- ntrib.xml,OSGI-INF/extensions/theme-contrib.xml,OSGI-INF/extensions/t
- heme-contrib.xml
+ ntrib.xml
+Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.osivia.opentoutatice.simple.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 
