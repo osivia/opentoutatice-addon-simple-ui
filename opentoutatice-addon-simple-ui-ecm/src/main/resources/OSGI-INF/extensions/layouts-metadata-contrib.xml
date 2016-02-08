@@ -55,6 +55,29 @@
 			</properties>
 		</widget>
 		
+		<widget name="metadata_toutatice_keywords_widget" type="template">
+			<labels>
+				<label mode="any">toutatice.label.keywords</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>ttc:keywords</field>
+			</fields>
+			<properties mode="any">
+				<property name="template">
+					/widgets/toutatice_keyword_widget.xhtml
+				</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(currentDocument.type != 'BlogSite' and
+					(currentUser.administrator or
+					currentNuxeoPrincipal.isMemberOf('Administrators')) ,
+					layout.mode,
+					'hidden')}
+				</mode>
+			</widgetModes>
+		</widget>
+		
 		<!-- ======= -->
 
 		<widget name="flow" type="layout">
@@ -161,6 +184,9 @@
 				</row>
 				<row>
 					<widget>coverage</widget>
+				</row>
+				<row>
+					<widget>metadata_toutatice_keywords_widget</widget>
 				</row>
 			</rows>
 		</layout>
