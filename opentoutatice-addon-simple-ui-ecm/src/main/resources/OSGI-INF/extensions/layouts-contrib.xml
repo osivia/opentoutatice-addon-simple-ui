@@ -37,148 +37,8 @@
 					<defaultValues mode="any">
 						<property name="showFormat">false</property>
 						<property name="disableHTMLInit">true</property>
+						<property name="editorSelector">mceSimpleEditorResponsive</property>
 					</defaultValues>
-					<layouts mode="view">
-						<layout name="richtext_widget_type_properties_view">
-							<rows>
-								<row>
-									<widget>cssClass</widget>
-								</row>
-							</rows>
-							<widget name="cssClass" type="text">
-								<labels>
-									<label mode="any">Style class</label>
-								</labels>
-								<fields>
-									<field>cssClass</field>
-								</fields>
-							</widget>
-						</layout>
-					</layouts>
-					<layouts mode="edit">
-						<layout name="richtext_widget_type_properties_edit">
-							<rows>
-								<row>
-									<widget>height</widget>
-								</row>
-								<row>
-									<widget>width</widget>
-								</row>
-								<row>
-									<widget>cols</widget>
-								</row>
-								<row>
-									<widget>rows</widget>
-								</row>
-								<row>
-									<widget>editorSelector</widget>
-								</row>
-							</rows>
-							<widget name="width" type="int">
-								<labels>
-									<label mode="any">Width</label>
-								</labels>
-								<helpLabels>
-									<label mode="any">
-										The textarea width. Defaults to "700".
-									</label>
-								</helpLabels>
-								<fields>
-									<field>width</field>
-								</fields>
-							</widget>
-							<widget name="height" type="int">
-								<labels>
-									<label mode="any">Height</label>
-								</labels>
-								<helpLabels>
-									<label mode="any">
-										The textarea height. Defaults to "400".
-									</label>
-								</helpLabels>
-								<fields>
-									<field>height</field>
-								</fields>
-							</widget>
-							<widget name="cols" type="int">
-								<labels>
-									<label mode="any">Number of columns</label>
-								</labels>
-								<helpLabels>
-									<label mode="any">
-										The cols attribute sets the number of
-										columns
-										to display.
-										Available since 5.3.1.
-									</label>
-								</helpLabels>
-								<fields>
-									<field>cols</field>
-								</fields>
-							</widget>
-							<widget name="rows" type="int">
-								<labels>
-									<label mode="any">Number of rows</label>
-								</labels>
-								<helpLabels>
-									<label mode="any">
-										The rows attribute sets the number of rows
-										to
-										display.
-										Available since 5.3.1.
-									</label>
-								</helpLabels>
-								<fields>
-									<field>rows</field>
-								</fields>
-							</widget>
-							<widget name="editorSelector" type="text">
-								<labels>
-									<label mode="any">Editor selector</label>
-								</labels>
-								<helpLabels>
-									<label mode="any">
-										The class to use to identify text areas to
-										turn into html
-										editors. Defaults to "mceEditor". See the
-										editor_selector
-										option in tiny_mce
-										(http://wiki.moxiecode.com/index.php/TinyMCE:Configuration/editor_selector).
-									</label>
-								</helpLabels>
-								<fields>
-									<field>editorSelector</field>
-								</fields>
-							</widget>
-							<widget name="disableHTMLInit" type="boolean">
-								<labels>
-									<label mode="any">Disable HTML init</label>
-								</labels>
-								<helpLabels>
-									<label mode="any">
-										Disable the tiny MCE init from
-										tiny_mce_init.js
-									</label>
-								</helpLabels>
-								<fields>
-									<field>disableHTMLInit</field>
-								</fields>
-							</widget>
-							<widget name="alternateTinyMCEjs" type="text">
-								<labels>
-									<label mode="any">Alternate Rich tiny MCE</label>
-								</labels>
-								<helpLabels>
-									<label mode="any">
-										Definition of new tiny MCE js
-									</label>
-								</helpLabels>
-								<fields>
-									<field>alternateTinyMCEjs</field>
-								</fields>
-							</widget>
-						</layout>
-					</layouts>
 				</properties>
 			</configuration>
 			<handler-class>
@@ -318,13 +178,9 @@
 		<!-- Override of enclosed definitions layouts -->
 		<layout name="layout@Annonce-create">
 			<templates>
-				<template mode="create">/layouts/ottc_editor_js_layout_default_template.xhtml
+				<template mode="any">/layouts/layout_default_template.xhtml
 				</template>
 			</templates>
-			<properties mode="create">
-				<property name="editorJs">tinymce/custom/tiny_mce_init_extrait.js
-				</property>
-			</properties>
 			<rows>
 				<row>
 					<widget>article_title</widget>
@@ -346,13 +202,9 @@
 
 		<layout name="layout@Annonce-edit">
 			<templates>
-				<template mode="edit">/layouts/ottc_editor_js_layout_default_template.xhtml
-				</template>
-			</templates>
-			<properties mode="edit">
-				<property name="editorJs">tinymce/custom/tiny_mce_init_extrait.js
-				</property>
-			</properties>
+                <template mode="any">/layouts/layout_default_template.xhtml
+                </template>
+            </templates>
 			<rows>
 				<row>
 					<widget>article_title</widget>
@@ -370,7 +222,7 @@
 					<widget>files</widget>
 				</row>
 			</rows>
-		</layout>
+		</layout> 
 
 		<layout name="layout@AnnonceFolder-create">
 			<templates>
@@ -411,7 +263,7 @@
 					<widget>picture</widget>
 				</row>
 				<row>
-					<widget>content</widget>
+					<widget>ottc_content</widget>
 				</row>
 			</rows>
 		</layout>
@@ -429,10 +281,10 @@
 					<widget>picture</widget>
 				</row>
 				<row>
-					<widget>content</widget>
+					<widget>ottc_content</widget>
 				</row>
 			</rows>
-		</layout>
+		</layout> 
 
 	</extension>
 
