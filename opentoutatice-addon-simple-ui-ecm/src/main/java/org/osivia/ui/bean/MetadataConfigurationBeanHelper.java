@@ -26,7 +26,7 @@ import fr.toutatice.ecm.platform.web.document.ToutaticeWebActionsBean;
 public class MetadataConfigurationBeanHelper extends ConfigurationBeanHelper {
     
     /** Show metadata in Nuxeo BO indicator. */
-    public static final String METADATA_IN_NX_BO = "nuxeo.metadata.bo";
+    public static final String METADATA_IN_NX_BO = "ottc.metadata.show.nx.bo";
     
     /**
      * @return true if metadata must be inject in Nuxeo BO.

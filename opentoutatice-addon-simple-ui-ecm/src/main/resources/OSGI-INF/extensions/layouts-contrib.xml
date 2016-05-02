@@ -70,7 +70,7 @@
 				</property>
 			</properties>
 		</widget>
-
+		
 	</extension>
 
 	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
@@ -186,9 +186,6 @@
 					<widget>article_title</widget>
 				</row>
 				<row>
-					<widget>article_extrait</widget>
-				</row>
-				<row>
 					<widget>article_content</widget>
 				</row>
 				<row>
@@ -208,9 +205,6 @@
 			<rows>
 				<row>
 					<widget>article_title</widget>
-				</row>
-				<row>
-					<widget>article_extrait</widget>
 				</row>
 				<row>
 					<widget>article_content</widget>
