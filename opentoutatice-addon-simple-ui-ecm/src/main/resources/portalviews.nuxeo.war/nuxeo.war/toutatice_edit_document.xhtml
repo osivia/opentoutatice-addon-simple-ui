@@ -29,11 +29,15 @@
 				class="form form-horizontal" role="form">
 
 				<ul id="tabs" class="nav nav-tabs tab-margin" role="tablist">
+				
 					<li role="presentation" class="active"><a
 						aria-controls="content" role="tab" data-toggle="tab"
 						href="#content">#{messages['ottc.tab.content.title']}</a></li>
-					<li role="presentation"><a aria-controls="metadata" role="tab"
-						data-toggle="tab" href="#metadata" onclick="window.parent.jQuery.fancybox.update();">#{messages['ottc.tab.metadata.title']}</a></li>
+						
+				    <c:if test="#{!currentDocument.hasFacet('doNotShowMetadataInPV')}">		
+						<li role="presentation"><a aria-controls="metadata" role="tab"
+							data-toggle="tab" href="#metadata" onclick="window.parent.jQuery.fancybox.update();">#{messages['ottc.tab.metadata.title']}</a></li>
+					</c:if>
 				</ul>
 
 				<div class="tab-content">
@@ -41,11 +45,13 @@
 						<nxl:documentLayout mode="edit" value="#{currentDocument}"
 							template="/layouts/ottc_div_layout_edit.xhtml" />
 					</div>
-
-					<div role="tabpanel" class="tab-pane" id="metadata">
-						<nxl:layout name="ottc_metadata" mode="edit" value="#{currentDocument}"
-							template="/layouts/ottc_base_div_layout_edit.xhtml" />
-					</div>
+                    
+                    <c:if test="#{!currentDocument.hasFacet('doNotShowMetadataInPV')}"> 
+						<div role="tabpanel" class="tab-pane" id="metadata">
+							<nxl:layout name="ottc_metadata" mode="edit" value="#{currentDocument}"
+								template="/layouts/ottc_base_div_layout_edit.xhtml" />
+						</div>
+					</c:if>
 				</div>
 
 				<nav class="navbar navbar-default navbar-fixed-bottom">

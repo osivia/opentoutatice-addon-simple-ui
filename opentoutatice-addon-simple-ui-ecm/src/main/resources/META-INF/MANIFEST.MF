@@ -6,7 +6,7 @@ Bundle-Version: 1.0
 Bundle-Name: org.osivia.ui.metadata
 Nuxeo-Component: OSGI-INF/extensions/layouts-contrib.xml,OSGI-INF/exte
  nsions/layouts-metadata-contrib.xml,OSGI-INF/extensions/generic-ui-co
- ntrib.xml
+ ntrib.xml,OSGI-INF/extensions/core-types-contrib.xml
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.osivia.opentoutatice.simple.ui
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

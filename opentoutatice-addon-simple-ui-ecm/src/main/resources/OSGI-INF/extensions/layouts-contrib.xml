@@ -82,7 +82,7 @@
 				<alias>dublincore</alias>
 			</aliases>
 			<templates>
-				<template mode="view_summary">
+				<template mode="view">
 					/layouts/layout_default_template.xhtml
 				</template>
 				<template mode="edit">
@@ -134,7 +134,7 @@
 					</mode>
 				</widgetModes>
 				<properties widgetMode="edit">
-					<property name="required">#{webActions.isTitleRequired()}</property>
+					<property name="required">#{namingWebActions.isTitleRequired()}</property>
 					<property name="styleClass">dataInputText</property>
 				</properties>
 			</widget>

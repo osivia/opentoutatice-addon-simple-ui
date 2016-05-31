@@ -77,11 +77,31 @@
 			</widgetModes>
 		</widget>
 		
+		<!-- For case when addon web-mode is installed in Nx -->
+		<widget name="metadata_ottc_weburl" type="template">
+            <labels>
+                <label mode="any">webmode.label.weburl</label>
+            </labels>
+            <translated>true</translated>
+            <fields>
+                <field>ottcweb:segment</field>
+            </fields>
+            <widgetModes>
+                <mode value="any">#{nxu:test(config.isWebModeActive() and 
+                    webModeDocumentActionsBean.supportsWebUrls(currentDocument),
+                    layout.mode, 'hidden')}
+                </mode>
+            </widgetModes>
+            <properties mode="any">
+                <property name="template">
+                    /widgets/toutatice_weburl_widget.xhtml
+                </property>
+            </properties>
+
+        </widget>
+		
 		<!-- Extract filed in MD tab for Articles -->
         <widget name="metadata_article_extract" type="ttc_richtext_with_mimetype">
-            <!-- <aliases>
-              <alias>article_extrait</alias>
-            </aliases> -->
             <labels>
                 <label mode="any">toutatice.label.extract</label>
             </labels>
@@ -243,6 +263,9 @@
 				</template>
 			</templates>
 			<rows>
+			    <row>
+			     <widget>metadata_ottc_weburl</widget>
+			    </row>
 				<row>
 					<widget>metadata_toutatice_showInMenu_widget</widget>
 				</row>
