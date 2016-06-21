@@ -82,7 +82,7 @@
 				<alias>dublincore</alias>
 			</aliases>
 			<templates>
-				<template mode="view">
+				<template mode="view_summary">
 					/layouts/layout_default_template.xhtml
 				</template>
 				<template mode="edit">
