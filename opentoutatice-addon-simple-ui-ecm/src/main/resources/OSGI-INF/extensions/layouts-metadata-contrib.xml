@@ -186,6 +186,12 @@
 					/layouts/layout_metadata_template.xhtml
 				</template>
 			</templates>
+			<properties mode="any">
+					<property name="contentLabel">ottc.tab.content.title</property>
+					<property name="metadataLabel">ottc.tab.metadata.title</property>
+					<property name="enabledInCreation">false</property>
+					<property name="bootstrapRightCols">10</property>
+			</properties>
 			<rows>
 				<row>
 					<widget>flow</widget>

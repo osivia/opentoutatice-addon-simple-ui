@@ -3,8 +3,6 @@
 
 	<require>fr.toutatice.ecm.platform.web.document.forms.layouts.webapp
 	</require>
-	<require>fr.toutatice.ecm.platform.web.document.forms.layouts.article.webapp
-	</require>
 	<require>org.nuxeo.ecm.webengine.sites.layouts</require>
 
 	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"

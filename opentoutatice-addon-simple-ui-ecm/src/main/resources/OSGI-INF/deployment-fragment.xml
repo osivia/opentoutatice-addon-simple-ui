@@ -4,7 +4,6 @@
     
     <require>org.nuxeo.ecm.platform.lang</require>
 	<require>fr.toutatice.ecm.platform.services</require>
-	<require>fr.toutatice.ecm.platform.file.based.naming</require>
 
 	<extension target="application#MODULE">
 		<module>
