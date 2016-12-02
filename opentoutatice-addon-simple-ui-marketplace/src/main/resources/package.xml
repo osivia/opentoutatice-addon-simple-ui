@@ -19,8 +19,8 @@
 	<dependencies>
 	    <package>open-toutatice:3.2.4-RC06</package>
 	    <!-- FIXME: why Drive? Add dependency to generic-ui -->
-		<package>nuxeo-drive:1.4.4:1.4.4</package>
-		<package>open-toutatice-addons-file-based-naming:1.4-RC01</package>
+		<!-- <package>nuxeo-drive:1.4.4:1.4.4</package>
+		<package>open-toutatice-addons-file-based-naming:1.4-RC01</package> -->
 	</dependencies>
 	<license>LGPL 2.1</license>
 	<license-url>http://www.gnu.org/licenses/lgpl-2.1.html</license-url>
