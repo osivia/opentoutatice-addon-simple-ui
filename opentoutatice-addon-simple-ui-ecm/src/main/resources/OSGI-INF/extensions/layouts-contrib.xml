@@ -134,8 +134,7 @@
 				<properties widgetMode="edit">
 					<property name="required">#{namingWebActions.isTitleRequired()}</property>
 					<property name="styleClass">dataInputText</property>
-					<!-- FIXME: rename csFormValidator to be compliant when no dependency on validation title -->
-					<!-- <property name="validator">#{csFormValidator.validateTitle}</property> -->
+					<property name="validator">#{csFormValidator.validateTitle}</property> 
 				</properties>
 			</widget>
 		</layout>
