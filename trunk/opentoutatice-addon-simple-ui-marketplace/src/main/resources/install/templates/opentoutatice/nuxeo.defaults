@@ -1,0 +1,18 @@
+opentoutatice.target=.
+
+# default properties values
+nuxeo.permalink.service.portal.url=localhost
+nuxeo.permalink.service.param1=portal
+nuxeo.permalink.service.param2=cms
+
+##----------------------------------------------------------------------------
+## States stack
+##----------------------------------------------------------------------------
+nuxeo.jsf.numberOfViewsInSession=20
+nuxeo.jsf.numberOfLogicalViews=20
+
+## Current version
+ottc.version=3.2.2
+
+## To show or not Portal Views metadata in Nuxeo Back Office ##
+ottc.metadata.show.nx.bo=true

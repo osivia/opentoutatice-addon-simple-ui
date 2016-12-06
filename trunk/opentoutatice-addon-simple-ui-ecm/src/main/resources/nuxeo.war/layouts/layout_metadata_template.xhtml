@@ -1,0 +1,21 @@
+<f:subview
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:c="http://java.sun.com/jstl/core"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:a4j="http://richfaces.org/a4j"
+  xmlns:nxl="http://nuxeo.org/nxforms/layout"
+  xmlns:nxu="http://nuxeo.org/nxweb/util"
+  id="#{layout.id}">
+  
+  <c:choose>
+    <c:when test="#{!config.showMetadataInNx()}">
+        <ui:include src="/layouts/ottc_empty_layout.xhtml" />
+    </c:when>
+    <c:otherwise>
+        <ui:include src="/layouts/layout_default_template.xhtml" />
+    </c:otherwise>
+  </c:choose>
+  
+ </f:subview>

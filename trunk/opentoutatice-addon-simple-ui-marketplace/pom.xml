@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>opentoutatice-ecm.ui</groupId>
+		<artifactId>opentoutatice-ecm.ui-parent</artifactId>
+		<version>2.0-RC04</version>
+	</parent>
+
+	<artifactId>opentoutatice-addon-simple-ui-marketplace</artifactId>
+	<packaging>zip</packaging>
+	<name>Simple Portal Views addon - marketplace</name>
+
+	<properties>
+		<nuxeo.cap.distribution.version>6.0</nuxeo.cap.distribution.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.nuxeo.ecm.distribution</groupId>
+				<artifactId>nuxeo-distribution</artifactId>
+				<version>${nuxeo.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.nuxeo.build</groupId>
+				<artifactId>ant-assembly-maven-plugin</artifactId>
+				<configuration>
+					<buildFiles>
+						<buildFile>${basedir}/src/main/assemble/assembly.xml</buildFile>
+					</buildFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
