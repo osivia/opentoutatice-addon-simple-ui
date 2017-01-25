@@ -100,32 +100,6 @@
 
         </widget>
 		
-		<!-- Extract filed in MD tab for Articles -->
-        <widget name="metadata_article_extract" type="ttc_richtext_with_mimetype">
-            <labels>
-                <label mode="any">toutatice.label.extract</label>
-            </labels>
-            <helpLabels>
-                <label mode="any">Les extraits sont des résumés facultatifs de vos
-                    articles, écrits à la main.
-                </label>
-            </helpLabels>
-            <translated>true</translated>
-            <fields>
-                <field>annonce:resume</field>
-            </fields>
-            <widgetModes>
-                <mode value="any">#{nxu:test(currentDocument.type == 'Annonce', layout.mode,
-                    'hidden')}
-                </mode>
-            </widgetModes>
-            <properties widgetMode="edit">
-                <property name="editorSelector">mceExtract</property>
-                <property name="disableHTMLInit">true</property>
-                <property name="alternateTinyMCEjs">tinymce/custom/tiny_mce_init_extrait.js</property>
-                <property name="showFormat">false</property>
-            </properties>
-        </widget>
 		
 		<!-- ======= -->
 
@@ -217,9 +191,6 @@
 			<rows>
 				<row>
 					<widget>metadata_description</widget>
-				</row>
-				<row>
-				    <widget>metadata_article_extract</widget>
 				</row>
 				<row>
 					<widget>metadata_add_thumbnail</widget>
