@@ -100,7 +100,7 @@
 
         </widget>
         
-		<widget name="metadata_publication_date" type="datetime">
+		<widget name="metadata_publication_date" type="date">
 			<labels>
 				<label mode="any">toutatice.label.publication.date</label>
 			</labels>
