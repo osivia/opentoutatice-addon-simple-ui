@@ -100,7 +100,7 @@
 
         </widget>
         
-		<widget name="metadata_publication_date" type="date">
+		<widget name="metadata_publication_date" type="pv_ttc_date">
 			<labels>
 				<label mode="any">toutatice.label.publication.date</label>
 			</labels>
@@ -108,12 +108,8 @@
 			<fields>
 				<field>ttc:publicationDate</field>
 			</fields>
-	      <properties widgetMode="view">
-	        <property name="pattern">#{nxu:basicDateAndTimeFormatter()}</property>
-	      </properties>
 	      <properties widgetMode="edit">
 	        <property name="required">false</property>
-	        <property name="format">#{nxu:basicDateAndTimeFormatter()}</property>
 	      </properties>
 		</widget>
 		
