@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 	<name>Simple PortalViews and Back-Office - parent</name>
 	<description>Allows Simple PortalViews and Back-Office</description>
-	<version>2.1</version>
+	<version>3.4-SNAPSHOT</version>
 
 	<properties>
 		<nuxeo.version>6.0-HF30</nuxeo.version>
@@ -57,7 +57,7 @@
 	</build>
 
 	<scm>
-		<developerConnection>scm:svn:http://projet.toutatice.fr/repos/toutatice-ecm/opentoutatice-addons/opentoutatice-simple-ui/tags/2.1</developerConnection>
+		<developerConnection>scm:svn:http://projet.toutatice.fr/repos/toutatice-ecm/opentoutatice-addons/opentoutatice-simple-ui/branches/2.1-maintenance</developerConnection>
 	</scm>
 
 	<distributionManagement>
