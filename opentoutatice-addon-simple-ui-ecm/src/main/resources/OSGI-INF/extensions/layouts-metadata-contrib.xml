@@ -99,6 +99,19 @@
             </properties>
 
         </widget>
+        
+		<widget name="metadata_publication_date" type="pv_ttc_date">
+			<labels>
+				<label mode="any">toutatice.label.publication.date</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>ttc:publicationDate</field>
+			</fields>
+	      <properties widgetMode="edit">
+	        <property name="required">false</property>
+	      </properties>
+		</widget>
 		
 		
 		<!-- ======= -->
@@ -148,6 +161,44 @@
 				</mode>
 			</widgetModes>
 		</widget>
+		
+		<widget name="metadata_comments_forbidden" type="checkbox">
+			<labels>
+				<label mode="any">toutatice.label.comments.forbidden</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>ttc:commentsForbidden</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="immediate">true</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test((documentActions.isTypeCommentable() and (not currentDocument.getType().equals("Thread"))),
+					layout.mode, 'hidden')}
+				</mode>
+			</widgetModes>
+			 
+		</widget>
+		
+		<widget name="metadata_metadatas_hidden" type="checkbox">
+			<labels>
+				<label mode="any">toutatice.label.metadatas.hidden</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>ttc:hideMetadatas</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="immediate">true</property>
+			</properties>
+			<widgetModes>
+				<mode value="any">#{nxu:test(currentDocument.hasFacet('Folderish'),
+					'hidden', layout.mode)}
+				</mode>
+			</widgetModes>
+			 
+		</widget>
 
 	</extension>
 
@@ -195,6 +246,15 @@
 				<row>
 					<widget>metadata_add_thumbnail</widget>
 				</row>
+				<row>
+					<widget>metadata_publication_date</widget>
+				</row>
+			    <row>
+			    	<widget>metadata_comments_forbidden</widget>
+			    </row>
+			    <row>
+			    	<widget>metadata_metadatas_hidden</widget>
+			    </row>
 			</rows>
 		</layout>
 
@@ -216,7 +276,7 @@
 				</row>
 				<row>
 					<widget>metadata_toutatice_keywords_widget</widget>
-				</row>
+				</row>		
 			</rows>
 		</layout>
 
@@ -228,7 +288,7 @@
 			</templates>
 			<rows>
 				<row>
-					<widget>toutatice_removeWebId_widget</widget>
+					<widget>toutatice_webId_widget</widget>
 				</row>
 			</rows>
 		</layout>
@@ -241,8 +301,8 @@
 			</templates>
 			<rows>
 			    <row>
-			     <widget>metadata_ottc_weburl</widget>
-			    </row>
+			    	<widget>metadata_ottc_weburl</widget>
+			    </row>    
 				<row>
 					<widget>metadata_toutatice_showInMenu_widget</widget>
 				</row>
