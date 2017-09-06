@@ -17,7 +17,9 @@
 			<fileset dir="src/main/resources" />
 			<filterset>
 				<filter token="VERSION" value="${maven.project.version}" />
-				<filter token="DISTRIB_VERSION" value="${nuxeo.version}" />
+				<filter token="DISTRIB_VERSION" value="${nuxeo.cap.version}" />
+				<filter token="OTTC_VERSION" value="${nuxeo.opentoutatice.version}" />
+				<filter token="FILE_NAMING_ADDON_VERSION" value="${nuxeo.file.naming.addon.version}" />
 			</filterset>
 		</copy>
 		
