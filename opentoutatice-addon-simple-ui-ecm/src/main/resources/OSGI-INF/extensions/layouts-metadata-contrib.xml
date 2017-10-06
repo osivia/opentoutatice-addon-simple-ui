@@ -113,6 +113,19 @@
 	      </properties>
 		</widget>
 		
+		<widget name="metadata_expired_date" type="pv_ttc_date">
+			<labels>
+				<label mode="any">label.dublincore.expired</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>dc:expired</field>
+			</fields>
+			<widgetModes>
+				<mode value="view_summary">#{empty layoutValue.dc.expired?'hidden':'view'}
+				</mode>
+			</widgetModes>
+		</widget>
 		
 		<!-- ======= -->
 

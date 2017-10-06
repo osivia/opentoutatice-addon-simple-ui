@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<component name="org.osivia.ui.metadata.widgets.adapter">
+
+	<require>fr.toutatice.ecm.platform.service.portalviews.adapter.WidgetsAdapterService</require>
+	<require>org.osivia.ui.metadata.layouts</require>
+
+	<extension target="fr.toutatice.ecm.platform.service.portalviews.adapter.WidgetsAdapterService"
+		point="adapter">
+		
+		<mappings>
+			<!-- Specifics Date widgets -->
+		    <mapping nxWidget="publication_date" pvWidget="metadata_publication_date" /> 
+		    <mapping nxWidget="expired" pvWidget="metadata_expired_date" /> 
+		</mappings>
+		
+	</extension>
+
+</component> 
