@@ -17,18 +17,19 @@
  */
 package org.osivia.ui.bean;
 
+import static org.jboss.seam.ScopeType.CONVERSATION;
+
 import org.jboss.seam.annotations.Install;
 import org.jboss.seam.annotations.Name;
 import org.jboss.seam.annotations.Observer;
 import org.jboss.seam.annotations.Scope;
 import org.nuxeo.ecm.core.api.ClientException;
 import org.nuxeo.ecm.core.api.DocumentModel;
-import static org.jboss.seam.ScopeType.CONVERSATION;
-import org.osivia.ui.constants.ExtendedSeamPrecedence;
 import org.nuxeo.ecm.webapp.helpers.EventNames;
+import org.opentoutatice.ecm.attached.images.bean.OttcDocumentActionsBean;
+import org.osivia.ui.constants.ExtendedSeamPrecedence;
 
 import fr.toutatice.ecm.platform.core.constants.ToutaticeNuxeoStudioConst;
-import fr.toutatice.ecm.platform.web.document.ToutaticeDocumentActionsBean;
 
 
 /**
@@ -38,7 +39,7 @@ import fr.toutatice.ecm.platform.web.document.ToutaticeDocumentActionsBean;
 @Name("documentActions")
 @Scope(CONVERSATION)
 @Install(precedence = ExtendedSeamPrecedence.ADDON)
-public class MetadataDocumentActionsBean extends ToutaticeDocumentActionsBean {
+public class MetadataDocumentActionsBean extends OttcDocumentActionsBean {
 	
 	private static final long serialVersionUID = 1L;
 

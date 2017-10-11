@@ -42,6 +42,12 @@
 				<artifactId>opentoutatice-ecm-platform-web</artifactId>
 				<version>${nuxeo.opentoutatice.version}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>opentoutatice-ecm.platform</groupId>
+				<artifactId>opentoutatice-ecm-platform-attached-files</artifactId>
+				<version>${nuxeo.opentoutatice.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
