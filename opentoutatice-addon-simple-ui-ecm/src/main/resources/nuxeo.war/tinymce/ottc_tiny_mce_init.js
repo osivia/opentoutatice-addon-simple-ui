@@ -33,9 +33,9 @@ tinyMCE.init({
 	invalid_elements : "br",
 	valid_elements : "strong/b,em,u,span[style<text-decoration: underline;]",
 
-	// Img insertion fixes
 	relative_urls : false,
-	remove_script_host : false,
+	remove_script_host: true,
+	document_base_url : baseURL,
 
 	theme_advanced_buttons1 : "bold,italic,underline",
 	theme_advanced_buttons2 : "",
@@ -66,9 +66,9 @@ tinyMCE
 
 	valid_elements : "p,br,strong/b,em,u,span[style<text-decoration: underline;]",
 
-	// Img insertion fixes
 	relative_urls : false,
-	remove_script_host : false,
+	remove_script_host: true,
+	document_base_url : baseURL,
 
 	theme_advanced_buttons1 : "bold,italic,underline",
 	theme_advanced_buttons2 : "",
